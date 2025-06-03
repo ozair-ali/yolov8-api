@@ -26,6 +26,5 @@ async def predict(file: UploadFile = File(...)):
     return {
         "boxes": result.boxes.xyxy.tolist(),         # bounding box coordinates
         "confidences": result.boxes.conf.tolist(),   # confidence scores
-        "classes": result.boxes.cls.tolist(),        # class indices
-        "names": result.names                        # class name mapping
+        "message": "Trash detected."
     }
